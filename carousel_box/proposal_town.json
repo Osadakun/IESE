@@ -1,0 +1,132 @@
+{
+  "type": "bubble",
+  "hero": {
+    "type": "image",
+    "url": "https://www.hot-ishikawa.jp/photo/thumbnail/1458?v=1b1962308b466834b4f020a7ed285df74ebe1844",
+    "size": "full",
+    "aspectRatio": "20:13",
+    "aspectMode": "cover",
+    "action": {
+      "type": "uri",
+      "label": "Line",
+      "uri": "https://linecorp.com/"
+    }
+  },
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "text",
+        "text": "東茶屋街",
+        "weight": "bold",
+        "size": "xl",
+        "contents": []
+      },
+      {
+        "type": "box",
+        "layout": "baseline",
+        "margin": "md",
+        "contents": [
+          {
+            "type": "icon",
+            "url": "https://tabelog.com/ishikawa/A1701/A170101/17010307/",
+            "size": "sm"
+          },
+          {
+            "type": "icon",
+            "size": "sm"
+          }
+        ]
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "spacing": "sm",
+        "margin": "lg",
+        "contents": [
+          {
+            "type": "box",
+            "layout": "baseline",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "Place",
+                "size": "sm",
+                "color": "#AAAAAA",
+                "flex": 1,
+                "contents": []
+              },
+              {
+                "type": "text",
+                "text": "石川県金沢市東山１",
+                "size": "sm",
+                "color": "#666666",
+                "flex": 5,
+                "wrap": true,
+                "contents": []
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "baseline",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "Time",
+                "size": "sm",
+                "color": "#AAAAAA",
+                "flex": 1,
+                "contents": []
+              },
+              {
+                "type": "text",
+                "text": "10:00 - 17:00",
+                "size": "sm",
+                "color": "#666666",
+                "flex": 5,
+                "wrap": true,
+                "contents": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "type": "box",
+    "layout": "vertical",
+    "flex": 0,
+    "spacing": "sm",
+    "contents": [
+      {
+        "type": "button",
+        "action": {
+          "type": "uri",
+          "label": "CALL",
+          "uri": "https://www.google.com/search?rlz=1C5CHFA_enJP947JP947&sxsrf=ALeKk00Oo32f7eAz4zMVQzUWkCusbXNaRQ:1626257829527&q=higashichayagai+電話番号&spell=1&sa=X&ved=2ahUKEwi5wffBquLxAhVty4sBHcsnAWwQBSgAegQIARA1&biw=1440&bih=714#:~:text=検索結果-,076-232-5555,-ひがし茶屋街"
+        },
+        "height": "sm",
+        "style": "link"
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "uri",
+          "label": "WEBSITE",
+          "uri": "https://www.kanazawa-kankoukyoukai.or.jp/spot/detail_10212.html"
+        },
+        "height": "sm",
+        "style": "link"
+      },
+      {
+        "type": "spacer",
+        "size": "sm"
+      }
+    ]
+  }
+}

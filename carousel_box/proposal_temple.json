@@ -1,0 +1,132 @@
+{
+  "type": "bubble",
+  "hero": {
+    "type": "image",
+    "url": "https://cdn.jalan.jp/jalan/img/8/kuchikomi/2878/KL/20502_0002878564_1.jpg",
+    "size": "full",
+    "aspectRatio": "20:13",
+    "aspectMode": "cover",
+    "action": {
+      "type": "uri",
+      "label": "Line",
+      "uri": "https://linecorp.com/"
+    }
+  },
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "text",
+        "text": "忍者寺",
+        "weight": "bold",
+        "size": "xl",
+        "contents": []
+      },
+      {
+        "type": "box",
+        "layout": "baseline",
+        "margin": "md",
+        "contents": [
+          {
+            "type": "icon",
+            "url": "https://tabelog.com/ishikawa/A1701/A170101/17010307/",
+            "size": "sm"
+          },
+          {
+            "type": "icon",
+            "size": "sm"
+          }
+        ]
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "spacing": "sm",
+        "margin": "lg",
+        "contents": [
+          {
+            "type": "box",
+            "layout": "baseline",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "Place",
+                "size": "sm",
+                "color": "#AAAAAA",
+                "flex": 1,
+                "contents": []
+              },
+              {
+                "type": "text",
+                "text": "石川県金沢市野町1-2-12",
+                "size": "sm",
+                "color": "#666666",
+                "flex": 5,
+                "wrap": true,
+                "contents": []
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "baseline",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "Time",
+                "size": "sm",
+                "color": "#AAAAAA",
+                "flex": 1,
+                "contents": []
+              },
+              {
+                "type": "text",
+                "text": "9:00 - 16:30",
+                "size": "sm",
+                "color": "#666666",
+                "flex": 5,
+                "wrap": true,
+                "contents": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "type": "box",
+    "layout": "vertical",
+    "flex": 0,
+    "spacing": "sm",
+    "contents": [
+      {
+        "type": "button",
+        "action": {
+          "type": "uri",
+          "label": "CALL",
+          "uri": "https://www.google.com/search?q=忍者寺　電話番号&rlz=1C5CHFA_enJP947JP947&biw=1440&bih=714&sxsrf=ALeKk00cIfLPw0heO6MioIsU86GmkxBW6g:1626258292546&ei=dLvuYIboIKqVr7wP2vqSmAM&oq=忍者寺　電話番号&gs_lcp=Cgdnd3Mtd2l6EAMyBAgAEB46BwgjEOoCECc6BAgjECc6CggAELEDEIMBEAQ6BwgAELEDEAQ6BAgAEAQ6BwgAELEDEEM6BAgAEEM6CggAELEDELEDEAQ6CAgAEAQQChAqOgYIABAEECU6BggAEAQQHkoFCDwSATVKBAhBGABQ4xdYpGNgrGZoB3AAeACAAdsCiAHLKZIBCDAuMjIuNi4zmAEAoAEBqgEHZ3dzLXdperABCsABAQ&sclient=gws-wiz&ved=0ahUKEwiG8tuerOLxAhWqyosBHVq9BDMQ4dUDCA4&uact=5#"
+        },
+        "height": "sm",
+        "style": "link"
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "uri",
+          "label": "WEBSITE",
+          "uri": "https://www.jalan.net/kankou/spt_17201ag2130012974/?screenId=OUW1701&influxKbn=0"
+        },
+        "height": "sm",
+        "style": "link"
+      },
+      {
+        "type": "spacer",
+        "size": "sm"
+      }
+    ]
+  }
+}
