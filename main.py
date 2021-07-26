@@ -45,7 +45,6 @@ def response_message(event):
                 FlexSendMessage(alt_text='状態を選んでね',contents = fl)
             ]
     )
-    fo.close()
     print("-----------",Text,"----------------")
     if (Text == " フード"):
         f = ("./carousel_box/type.json")
