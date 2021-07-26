@@ -47,7 +47,7 @@ def response_message(event):
     )
     fo.close()
     print("-----------",Text,"----------------")
-    if (Text == "フード"):
+    if (Text == " フード "):
         f = ("./carousel_box/type.json")
         fo = open(f,"r",encoding="utf-8")
         fl = json.load(fo)
@@ -57,7 +57,7 @@ def response_message(event):
             ]
         )
         fo.close()
-    elif(Text == "インスタ"):
+    elif(Text == " インスタ "):
         f = ("./carousel_box/carousel_tourism.json")
         fo = open(f,"r",encoding="utf-8")
         fl = json.load(fo)
@@ -67,7 +67,7 @@ def response_message(event):
             ]
         )
         fo.close()
-    elif(Text == "歴史"):
+    elif(Text == " 歴史 "):
         f = ("./carousel_box/carousel_history.json")
         fo = open(f,"r",encoding="utf-8")
         fl = json.load(fo)
