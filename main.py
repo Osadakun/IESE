@@ -1,5 +1,4 @@
 #-*- cording: utf-8 -*-
-import config
 import psycopg2
 from flask import Flask, render_template, g, request, abort
 import os
