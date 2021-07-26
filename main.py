@@ -12,15 +12,10 @@ from linebot.exceptions import (
     InvalidSignatureError
 )
 
-ACCESS_TOKEN = os.environ["ACCESS_TOKEN"]
-CHANNEL_SECRET = os.environ["CHANNEL_SECRET"]
-
-print("---------",ACCESS_TOKEN,"------------")
-print("---------",CHANNEL_SECRET,"------------")
-
 app = Flask(__name__)
-line_bot_api = LineBotApi(ACCESS_TOKEN)
-handler = WebhookHandler(CHANNEL_SECRET)
+line_bot_api = LineBotApi(os.environ["ACCESS_TOKEN"])
+handler = WebhookHandler(os.environ["CHANNEL_SECRET"])
+
 
 @app.route("/")
 def hello_world():
@@ -48,11 +43,11 @@ def response_message(event):
     fl = json.load(fo)
     line_bot_api.reply_message(event.reply_token,
             [
-                FlexSendMessage(alt_text='',contents = fl)
+                FlexSendMessage(alt_text='状態を選んでね',contents = fl)
             ]
     )
     fo.close()
-    
+
 if __name__ == "__main__":
-     port = int(os.getenv("PORT", 5000))
-     app.run(host="0.0.0.0", port=port)
+    port = int(os.getenv("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
