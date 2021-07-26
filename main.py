@@ -55,6 +55,7 @@ def response_message(event):
             [
                 FlexSendMessage(alt_text='状態を選んでね',contents = fl)
             ]
+        )
         fo.close()
     elif(Text == "インスタ"):
         f = ("./carousel_box/carousel_tourism.json")
@@ -64,6 +65,7 @@ def response_message(event):
             [
                 FlexSendMessage(alt_text='状態を選んでね',contents = fl)
             ]
+        )
         fo.close()
     elif(Text == "歴史"):
         f = ("./carousel_box/carousel_history.json")
@@ -73,6 +75,7 @@ def response_message(event):
             [
                 FlexSendMessage(alt_text='状態を選んでね',contents = fl)
             ]
+        )
         fo.close()
     else:
         line_bot_api.reply_message(event.reply_token,
