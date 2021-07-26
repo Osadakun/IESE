@@ -35,3 +35,16 @@ def callback():
 
     return 'OK'
 @handler.add(MessageEvent, message=TextMessage)
+def response_message(event):
+    UserID = event.source.user_id
+    Text = event.message.text
+    f = ("./carousel_box/greet.json")
+    fo = open(f,"r",encoding="utf-8")
+    fl = json.load(fo)
+    line_bot_api.reply_message(event.reply_token,
+            [
+                FlexSendMessage(alt_text='',contents = fl)
+            ]
+    )
+    fo.close()
+    
