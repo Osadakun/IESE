@@ -16,9 +16,6 @@ app = Flask(__name__)
 line_bot_api = LineBotApi(os.environ["ACCESS_TOKEN"])
 handler = WebhookHandler(os.environ["CHANNEL_SECRET"])
 
-UserID = event.source.user_id
-Text = event.message.text
-
 @app.route("/")
 def hello_world():
     return "HelloWorld!"
@@ -38,6 +35,8 @@ def callback():
     return 'OK'
 @handler.add(MessageEvent, message=TextMessage)
 def response_message(event):
+    UserID = event.source.user_id
+    Text = event.message.text
     f = ("./carousel_box/greet.json")
     fo = open(f,"r",encoding="utf-8")
     fl = json.load(fo)
@@ -47,6 +46,7 @@ def response_message(event):
             ]
     )
     fo.close()
+    print("-----------",Text,"----------------")
     if (Text == "フード"):
         f = ("./carousel_box/type.json")
         fo = open(f,"r",encoding="utf-8")
