@@ -46,17 +46,17 @@ def response_message(event):
             ]
     )
     print("-----------",Text,"----------------")
-    if (Text == " フード"):
+    if (Text == "フード"):
         f = ("./carousel_box/type.json")
         fo = open(f,"r",encoding="utf-8")
         fl = json.load(fo)
-        line_bot_api.reply_message(event.reply_token,
-            [
-                FlexSendMessage(alt_text='状態を選んでね',contents = fl)
-            ]
+        messages = TemplateSendMessage(
+            alt_text="状態を選んでね",
+            template=CarouselTemplate(columns = fl),
         )
+        line_bot_api.reply_message(event.reply_token,messages=messages)
         fo.close()
-    elif(Text == " インスタ "):
+    elif(Text == "インスタ"):
         f = ("./carousel_box/carousel_tourism.json")
         fo = open(f,"r",encoding="utf-8")
         fl = json.load(fo)
@@ -66,7 +66,7 @@ def response_message(event):
             ]
         )
         fo.close()
-    elif(Text == " 歴史 "):
+    elif(Text == "歴史"):
         f = ("./carousel_box/carousel_history.json")
         fo = open(f,"r",encoding="utf-8")
         fl = json.load(fo)
@@ -77,6 +77,7 @@ def response_message(event):
         )
         fo.close()
     else:
+        print("-------------------ここにきてるよ--------------------")
         line_bot_api.reply_message(event.reply_token,
             [
                 FlexSendMessage(alt_text='状態を選んでね',contents = fl)
