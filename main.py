@@ -35,7 +35,6 @@ def callback():
     return 'OK'
 @handler.add(MessageEvent, message=TextMessage)
 def response_message(event):
-    UserID = event.source.user_id
     Text = event.message.text
     f = ("./carousel_box/greet.json")
     fo = open(f,"r",encoding="utf-8")
@@ -78,14 +77,6 @@ def response_message(event):
         fo.close()
     else:
         print("-------------------ここにきてるよ--------------------")
-        line_bot_api.reply_message(event.reply_token,
-            [
-                FlexSendMessage(alt_text='状態を選んでね',contents = fl)
-            ]
-        )
-        fo.close()
-
-        
 
 if __name__ == "__main__":
     port = int(os.getenv("PORT", 5000))
