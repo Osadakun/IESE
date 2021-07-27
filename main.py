@@ -47,15 +47,15 @@ def response_message(event):
     fo.close()
     print("-----------",Text,"----------------")
     if (Text == "フード"):
-        f = ("./carousel_box/type.json")
-        fo = open(f,"r",encoding="utf-8")
-        fl = json.load(fo)
+        f1 = ("./carousel_box/type.json")
+        fo1 = open(f1,"r",encoding="utf-8")
+        fl1 = json.load(fo1)
         messages = TemplateSendMessage(
             alt_text="状態を選んでね",
-            template=CarouselTemplate(columns = fl),
+            template=CarouselTemplate(columns = fl1),
         )
         line_bot_api.reply_message(event.reply_token,messages=messages)
-        fo.close()
+        fo1.close()
     elif(Text == "インスタ"):
         f = ("./carousel_box/carousel_tourism.json")
         fo = open(f,"r",encoding="utf-8")
