@@ -39,20 +39,8 @@ def response_message(event):
     Text = event.message.text
     message = function.greet_message(event)
     if (message == "フード"):
-        f1 = ("./carousel_box/type.json")
-        fo1 = open(f1,"r",encoding="utf-8")
-        fl1 = json.load(fo1)
-        print("--------------------------------------------")
-        print(fl1)
-        print("--------------------------------------------")
-        line_bot_api.reply_message(event.reply_token,
-                [
-                    FlexSendMessage(alt_text='状態を選んでね',contents = fl1)
-                ]
-        )
-        print("-----------test5----------------")
-        fo1.close()
-        print("-----------test6----------------")
+        message = function.eat_type(event)
+        print(message)
     elif(Text == "インスタ"):
         f = ("./carousel_box/carousel_tourism.json")
         fo = open(f,"r",encoding="utf-8")
