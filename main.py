@@ -38,6 +38,9 @@ def callback():
 def response_message(event):
     Text = event.message.text
     message = function.greet_message(event)
+    print("-----------------------------------")
+    print(message)
+    print("-----------------------------------")
     if (message == "フード"):
         message = function.eat_type(event)
         print("-----------------------------------")
