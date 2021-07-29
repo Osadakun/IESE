@@ -37,7 +37,7 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def response_message(event):
     Text = event.message.text
-    message = function.greet_message(Text)
+    message = function.greet_message(event)
     if (message == "フード"):
         f1 = ("./carousel_box/type.json")
         fo1 = open(f1,"r",encoding="utf-8")
