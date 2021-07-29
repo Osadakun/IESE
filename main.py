@@ -54,6 +54,7 @@ def response_message(event):
         print("-----------test3----------------")
         fl1 = json.load(fo1)
         print("-----------test4----------------")
+        print("-----------"+fl1+"----------------")
         line_bot_api.reply_message(event.reply_token,
             [
                 TemplateSendMessage(alt_text='状態を選んでね',template = fl1)
