@@ -55,7 +55,7 @@ def response_message(event):
         fl1 = json.load(fo1)
         print("-----------test4----------------")
         line_bot_api.reply_message(event.reply_token,
-            [i
+            [
                 FlexSendMessage(alt_text='状態を選んでね',contents = fl1)
             ]
         )
