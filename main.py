@@ -44,6 +44,9 @@ def response_message(event):
                 FlexSendMessage(alt_text='状態を選んでね',contents = fl)
             ]
     )
+    print("--------------------------------------------")
+    print(fl)
+    print("--------------------------------------------")
     fo.close()
     print("-----------",Text,"----------------")
     if (Text == "フード"):
@@ -54,7 +57,9 @@ def response_message(event):
         print("-----------test3----------------")
         fl1 = json.load(fo1)
         print("-----------test4----------------")
+        print("--------------------------------------------")
         print(fl1)
+        print("--------------------------------------------")
         line_bot_api.reply_message(event.reply_token,
             [
                 TemplateSendMessage(alt_text='状態を選んでね',template = fl1)
