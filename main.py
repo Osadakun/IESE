@@ -50,11 +50,11 @@ def response_message(event):
         f1 = ("./carousel_box/type.json")
         fo1 = open(f1,"r",encoding="utf-8")
         fl1 = json.load(fo1)
-        messages = TemplateSendMessage(
-            alt_text="状態を選んでね",
-            template=CarouselTemplate(columns = fl1),
+        line_bot_api.reply_message(event.reply_token,
+            [
+                FlexSendMessage(alt_text='状態を選んでね',contents = fl1)
+            ]
         )
-        line_bot_api.reply_message(event.reply_token,messages=messages)
         fo1.close()
     elif(Text == "インスタ"):
         f = ("./carousel_box/carousel_tourism.json")
