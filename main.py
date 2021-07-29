@@ -36,21 +36,30 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def response_message(event):
     Text = event.message.text
-    f = ('./carousel_box/greet.json')
-    fo = open(f,'r')
-    fl = json.load(fo)
-    line_bot_api.reply_message(event.reply_token,
-            [
-                FlexSendMessage(alt_text='状態を選んでね',contents = fl)
-            ]
-    )
-    print("--------------------------------------------")
-    print(fl)
-    print("--------------------------------------------")
-    fo.close()
-    print("--------------------------------------------")
-    print(fl)
-    print("--------------------------------------------")
+    with open('./carousel_box/greet.json') as f:
+        fl = json.load(f)
+        line_bot_api.reply_message(event.reply_token,
+                [
+                    FlexSendMessage(alt_text='状態を選んでね',contents = fl)
+                ]
+        )
+
+#    f = ('./carousel_box/greet.json')
+#    fo = open(f,'r')
+#    fl = json.load(fo)
+#    line_bot_api.reply_message(event.reply_token,
+#            [
+#                FlexSendMessage(alt_text='状態を選んでね',contents = fl)
+#            ]
+#    )
+        print("--------------------------------------------")
+        print(fl)
+        print("--------------------------------------------")
+#    fo.close()
+        print("--------------------------------------------")
+        print(fl)
+        print("--------------------------------------------")
+        pass
     if (Text == "フード"):
         f1 = ("./carousel_box/type.json")
         fo1 = open(f1,"r",encoding="utf-8")
