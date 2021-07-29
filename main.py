@@ -46,7 +46,11 @@ def response_message(event):
     )
     fo.close()
     print("-----------",Text,"----------------")
-    if (Text == "フード"):
+    
+@handler.add(PostbackEvent)
+def handle_message(event):
+    event_data = event.postback.data
+    if (event_data == "フード"):
         print("-----------test1----------------")
         f1 = ("./carousel_box/type.json")
         print("-----------test2----------------")
