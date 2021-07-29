@@ -47,15 +47,21 @@ def response_message(event):
     fo.close()
     print("-----------",Text,"----------------")
     if (Text == "フード"):
+        print("-----------test1----------------")
         f1 = ("./carousel_box/type.json")
+        print("-----------test2----------------")
         fo1 = open(f1,"r",encoding="utf-8")
+        print("-----------test3----------------")
         fl1 = json.load(fo1)
+        print("-----------test4----------------")
         line_bot_api.reply_message(event.reply_token,
-            [
+            [i
                 FlexSendMessage(alt_text='状態を選んでね',contents = fl1)
             ]
         )
+        print("-----------test5----------------")
         fo1.close()
+        print("-----------test6----------------")
     elif(Text == "インスタ"):
         f = ("./carousel_box/carousel_tourism.json")
         fo = open(f,"r",encoding="utf-8")
