@@ -48,7 +48,9 @@ def response_message(event):
     print(fl)
     print("--------------------------------------------")
     fo.close()
-    print("-----------",Text,"----------------")
+    print("--------------------------------------------")
+    print(fl)
+    print("--------------------------------------------")
     if (Text == "フード"):
         f1 = ("./carousel_box/type.json")
         fo1 = open(f1,"r",encoding="utf-8")
