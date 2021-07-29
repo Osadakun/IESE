@@ -22,7 +22,7 @@ def greet_message(event):
     fl = json.load(fo)
     line_bot_api.reply_message(event.reply_token,
             [
-                FlexSendMessage(alt_text=('test',contents = fl)
+                FlexSendMessage(alt_text='test',contents = fl)
             ]
     )
     Text = event.message.text
