@@ -20,19 +20,19 @@ handler = WebhookHandler(os.environ["CHANNEL_SECRET"])
 def hello_world():
     return "HelloWorld!"
 
-#@app.route("/callback", methods=['POST'])
-#def callback():
-#    signature = request.headers['X-Line-Signature']
-#
-#    body = request.get_data(as_text=True)
-#    app.logger.info("Request body: " + body)
+@app.route("/callback", methods=['POST'])
+def callback():
+    signature = request.headers['X-Line-Signature']
 
-#    try:
-#        handler.handle(body, signature)
- #   except InvalidSignatureError:
-  #      abort(400)
+    body = request.get_data(as_text=True)
+    app.logger.info("Request body: " + body)
 
-#    return 'OK'
+    try:
+        handler.handle(body, signature)
+        except InvalidSignatureError:
+        abort(400)
+
+    return 'OK'
 @handler.add(MessageEvent, message=TextMessage)
 def response_message(event):
     Text = event.message.text
