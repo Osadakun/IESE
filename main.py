@@ -46,11 +46,7 @@ def response_message(event):
     )
     fo.close()
     print("-----------",Text,"----------------")
-    
-@handler.add(PostbackEvent)
-def handle_message(event):
-    event_data = event.postback.data
-    if (event_data == "フード"):
+    if (Text == "フード"):
         print("-----------test1----------------")
         f1 = ("./carousel_box/type.json")
         print("-----------test2----------------")
@@ -60,7 +56,7 @@ def handle_message(event):
         print("-----------test4----------------")
         line_bot_api.reply_message(event.reply_token,
             [
-                FlexSendMessage(alt_text='状態を選んでね',contents = fl1)
+                TemplateSendMessage(alt_text='状態を選んでね',template = fl1)
             ]
         )
         print("-----------test5----------------")
