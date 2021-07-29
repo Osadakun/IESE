@@ -28,3 +28,17 @@ def greet_message(event):
     Text = event.message.text
     fo.close()
     return Text
+
+def eat_type(event):
+    f = ('./carousel_box/type.json')
+    fo = open(f,'r',encoding="utf-8")
+    fl = json.load(fo)
+    line_bot_api.reply_message(event.reply_token,
+            [
+                FlexSendMessage(alt_text='test',contents = fl)
+            ]
+    )
+    Text = event.message.text
+    fo.close()
+    return Text
+
