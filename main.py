@@ -36,8 +36,8 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def response_message(event):
     Text = event.message.text
-    f = ("./carousel_box/greet.json")
-    fo = open(f,"r",encoding="utf-8")
+    f = ('./carousel_box/greet.json')
+    fo = open(f,'r')
     fl = json.load(fo)
     line_bot_api.reply_message(event.reply_token,
             [
