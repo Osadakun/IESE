@@ -50,20 +50,16 @@ def response_message(event):
     fo.close()
     print("-----------",Text,"----------------")
     if (Text == "フード"):
-        print("-----------test1----------------")
         f1 = ("./carousel_box/type.json")
-        print("-----------test2----------------")
         fo1 = open(f1,"r",encoding="utf-8")
-        print("-----------test3----------------")
         fl1 = json.load(fo1)
-        print("-----------test4----------------")
         print("--------------------------------------------")
         print(fl1)
         print("--------------------------------------------")
         line_bot_api.reply_message(event.reply_token,
-            [
-                TemplateSendMessage(alt_text='状態を選んでね',template = fl1)
-            ]
+                [
+                    FlexSendMessage(alt_text='状態を選んでね',contents = fl1)
+                ]
         )
         print("-----------test5----------------")
         fo1.close()
