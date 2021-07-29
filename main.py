@@ -2,6 +2,7 @@
 import psycopg2
 from flask import Flask, render_template, g, request, abort
 import os
+import function
 import json
 from linebot.models import *
 
@@ -36,23 +37,8 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def response_message(event):
     Text = event.message.text
-    f = ('./carousel_box/greet.json')
-    fo = open(f,'r')
-    fl = json.load(fo)
-    line_bot_api.reply_message(event.reply_token,
-            [
-                FlexSendMessage(alt_text='状態を選んでね',contents = fl)
-            ]
-    )
-    print("--------------------------------------------")
-    print(fl)
-    print("--------------------------------------------")
-    fo.close()
-    fl = json.load(fo)
-    print("--------------------------------------------")
-    print(fl)
-    print("--------------------------------------------")
-    if (Text == "フード"):
+    message = function.greet_message(Text)
+    if (message == "フード"):
         f1 = ("./carousel_box/type.json")
         fo1 = open(f1,"r",encoding="utf-8")
         fl1 = json.load(fo1)
