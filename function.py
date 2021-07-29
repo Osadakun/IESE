@@ -18,16 +18,17 @@ handler = WebhookHandler(os.environ["CHANNEL_SECRET"])
 
 def greet_message(event):
     f = ('./carousel_box/greet.json')
-    fo = open(f,'r')
+    fo = open(f,'r',encoding="utf-8")
     fl = json.load(fo)
     line_bot_api.reply_message(event.reply_token,
             [
-                FlexSendMessage(alt_text='çŠ¶æ…‹ã‚’é¸ã‚“ã§ã­',contents = fl)
+                FlexSendMessage(alt_text='ó‘Ô‚ğ‘I‚ñ‚Å‚Ë',contents = fl)
             ]
     )
+    Text = event.message.text
     print("--------------------------------------------")
     print(fl)
     print("--------------------------------------------")
     fo.close()
-    Text = event.message.text
+    #Text = event.message.text
     return Text
