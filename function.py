@@ -16,7 +16,7 @@ app = Flask(__name__)
 line_bot_api = LineBotApi(os.environ["ACCESS_TOKEN"])
 handler = WebhookHandler(os.environ["CHANNEL_SECRET"])
 
-def greet_message(text):
+def greet_message(event):
     f = ('./carousel_box/greet.json')
     fo = open(f,'r')
     fl = json.load(fo)
