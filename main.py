@@ -40,7 +40,9 @@ def response_message(event):
     message = function.greet_message(event)
     if (message == "フード"):
         message = function.eat_type(event)
+        print("-----------------------------------")
         print(message)
+        print("-----------------------------------")
     elif(Text == "インスタ"):
         f = ("./carousel_box/carousel_tourism.json")
         fo = open(f,"r",encoding="utf-8")
