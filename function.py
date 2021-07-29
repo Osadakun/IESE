@@ -26,9 +26,5 @@ def greet_message(event):
             ]
     )
     Text = event.message.text
-    print("--------------------------------------------")
-    print(fl)
-    print("--------------------------------------------")
     fo.close()
-    #Text = event.message.text
     return Text
