@@ -36,6 +36,7 @@ def greet_message(event):
     return Text
 
 def eat_type(event):
+    UserID = event.source.user_id
     f = ('./carousel_box/type.json')
     fo = open(f,'r',encoding="utf-8")
     fl = json.load(fo)

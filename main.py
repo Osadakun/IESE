@@ -37,7 +37,6 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def response_message(event):
     Text = event.message.text
-    UserID = event.source.user_id
     message = function.greet_message(event)
     print("-----------------------------------")
     print(message)
