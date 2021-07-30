@@ -38,6 +38,9 @@ def eat_type(event):
                 FlexSendMessage(alt_text='test',contents = fl)
             ]
     )
+    print("-----------------------------------")
+    print(FlexSendMessage(alt_text='test',contents = fl))
+    print("-----------------------------------")
     Text = event.message.text
     fo.close()
     return Text
