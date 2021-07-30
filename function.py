@@ -18,22 +18,81 @@ line_bot_api = LineBotApi(os.environ["ACCESS_TOKEN"])
 handler = WebhookHandler(os.environ["CHANNEL_SECRET"])
 
 def greet_message(event):
-    f = ('./carousel_box/greet.json')
-    fo = open(f,'r',encoding="utf-8")
-    fl = json.load(fo)
-    print("^^-----------------------------------^^")
-    print(fl)
-    print("^^-----------------------------------^^")
-    line_bot_api.reply_message(event.reply_token,
-            [
-                FlexSendMessage(alt_text='test',contents = fl)
-            ]
-    )
+    payload = {
+    "type": "bubble",
+    "direction": "ltr",
+    "header": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+        {
+            "type": "text",
+            "text": "金沢へようこそ！！",
+            "align": "center",
+            "contents": []
+        }
+        ]
+    },
+    "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+        {
+            "type": "text",
+            "text": "どんな観光名所を探していますか？",
+            "align": "center",
+            "contents": []
+        }
+        ]
+    },
+    "footer": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+        {
+            "type": "button",
+            "action": {
+            "type": "message",
+            "label": "美味しいものが食べたい",
+            "text": "フード"
+            }
+        },
+        {
+            "type": "button",
+            "action": {
+            "type": "message",
+            "label": "インスタ映えする空間へ行きたい",
+            "text": "インスタ"
+            }
+        },
+        {
+            "type": "button",
+            "action": {
+            "type": "message",
+            "label": "歴史を感じたい",
+            "text": "歴史"
+            }
+        }
+        ]
+    }
+    }
+
+#    f = ('./carousel_box/greet.json')
+#    fo = open(f,'r',encoding="utf-8")
+#    fl = json.load(fo)
+#    print("^^-----------------------------------^^")
+#    print(fl)
+#    print("^^-----------------------------------^^")
+#    line_bot_api.reply_message(event.reply_token,
+ #           [
+ #               FlexSendMessage(alt_text='test',contents = fl)
+  #          ]
+   # )
     Text = event.message.text
-    fo.close()
-    print("^^^-----------------------------------^^^")
-    print(fl)
-    print("^^^-----------------------------------^^^")
+    #fo.close()
+    #print("^^^-----------------------------------^^^")
+    #print(fl)
+    #print("^^^-----------------------------------^^^")
     return Text
 
 def eat_type(event):
