@@ -36,9 +36,24 @@ def callback():
         abort(400)
 
     return 'OK'
+
+@handler.add(FolloewEvent)
+def follow(event):
+    f = ("./carousel_box/greet.json")
+    fo = open(f,"r",encoding="utf-8")
+    fl = json.load(fo)
+    line_bot_api.reply_message(event.reply_token,
+        [
+            FlexSendMessage(alt_text='状態を選んでね',contents = fl)
+        ]
+    )
+    fo.close()
+
+
 @handler.add(MessageEvent, message=TextMessage)
 def response_message(event):
-    message = function.greet_message(event)
+    message = event.message.text
+    #message = function.greet_message(event)
     if (message == "フード"):
         message = function.eat_type(event)
         print(message)
