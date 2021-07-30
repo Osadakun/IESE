@@ -42,26 +42,26 @@ def response_message(event):
     if (message == "フード"):
         message = function.eat_type(event)
         print(message)
-    elif(Text == "インスタ"):
-        f = ("./carousel_box/carousel_tourism.json")
-        fo = open(f,"r",encoding="utf-8")
-        fl = json.load(fo)
-        line_bot_api.reply_message(event.reply_token,
-            [
-                FlexSendMessage(alt_text='状態を選んでね',contents = fl)
-            ]
-        )
-        fo.close()
-    elif(Text == "歴史"):
-        f = ("./carousel_box/carousel_history.json")
-        fo = open(f,"r",encoding="utf-8")
-        fl = json.load(fo)
-        line_bot_api.reply_message(event.reply_token,
-            [
-                FlexSendMessage(alt_text='状態を選んでね',contents = fl)
-            ]
-        )
-        fo.close()
+#    elif(Text == "インスタ"):
+#        f = ("./carousel_box/carousel_tourism.json")
+#        fo = open(f,"r",encoding="utf-8")
+#        fl = json.load(fo)
+#        line_bot_api.reply_message(event.reply_token,
+#            [
+#                FlexSendMessage(alt_text='状態を選んでね',contents = fl)
+#            ]
+#        )
+#        fo.close()
+#    elif(Text == "歴史"):
+#        f = ("./carousel_box/carousel_history.json")
+#        fo = open(f,"r",encoding="utf-8")
+#        fl = json.load(fo)
+#        line_bot_api.reply_message(event.reply_token,
+#            [
+#                FlexSendMessage(alt_text='状態を選んでね',contents = fl)
+#            ]
+#        )
+#        fo.close()
     else:
         print("-------------------ここにきてるよ--------------------")
 
