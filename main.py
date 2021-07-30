@@ -51,7 +51,10 @@ def response_message(event):
                 TextSendMessage(text='探しているジャンルを選んでください。\n「肉系」\n「魚系」\n「郷土料理系」')
             ]
         )
-        
+        if(message == "肉系"):
+            print("成功だ")
+        else:
+            print("failed")
     elif(message == "オシャレな建物"):
         print("hoge")
     elif(message == "歴史のある建物"):
