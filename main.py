@@ -38,39 +38,23 @@ def follow(event):
     line_bot_api.reply_message(event.reply_token,
         [
             TextSendMessage(text='観光名所提案Botです。\n友達追加ありがとうございます!!'),
-            TextSendMessage(text='探しているものを以下から選んで送信してください。\n「飲食店」\n「オシャレな建物」\ni「歴史のある建物」')
+            TextSendMessage(text='探しているものを以下から選んで送信してください。\n「飲食店」\n「オシャレな建物」\n「歴史のある建物」')
         ]
     )
 
 @handler.add(MessageEvent, message=TextMessage)
 def response_message(event):
     message = event.message.text
-    #message = function.greet_message(event)
     if (message == "飲食店"):
-        #message = function.eat_type(event)
-        print("message")
-#    elif(Text == "インスタ"):
-#        f = ("./carousel_box/carousel_tourism.json")
-#        fo = open(f,"r",encoding="utf-8")
-#        fl = json.load(fo)
-#        line_bot_api.reply_message(event.reply_token,
-#            [
-#                FlexSendMessage(alt_text='状態を選んでね',contents = fl)
-#            ]
-#        )
-#        fo.close()
-#    elif(Text == "歴史"):
-#        f = ("./carousel_box/carousel_history.json")
-#        fo = open(f,"r",encoding="utf-8")
-#        fl = json.load(fo)
-#        line_bot_api.reply_message(event.reply_token,
-#            [
-#                FlexSendMessage(alt_text='状態を選んでね',contents = fl)
-#            ]
-#        )
-#        fo.close()
-    else:
-        print("-------------------ここにきてるよ--------------------")
+        line_bot_api.reply_message(event.reply_token,
+            [
+                TextSendMessage(text='探しているジャンルを選んでください。\n「肉系」\n「魚系」\n「郷土料理系」')
+            ]
+        )
+        
+    elif(message == "オシャレな建物"):
+
+    elif(Text == "歴史のある建物"):
 
 if __name__ == "__main__":
     port = int(os.getenv("PORT", 5000))
