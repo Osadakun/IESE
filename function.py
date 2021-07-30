@@ -37,10 +37,69 @@ def greet_message(event):
 
 def eat_type(event):
     UserID = event.source.user_id
-    f = ('./carousel_box/type.json')
-    fo = open(f,'r',encoding="utf-8")
-    fl = json.load(fo)
-    container_obj = FlexSendMessage.new_from_json_dict(fl.payload)
+payload = {
+  "type": "bubble",
+  "direction": "ltr",
+  "header": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "text",
+        "text": "どんなものが食べたいですか？",
+        "align": "center",
+        "contents": []
+      }
+    ]
+  },
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "text",
+        "text": "ジャンルを選んでね",
+        "align": "center",
+        "contents": []
+      }
+    ]
+  },
+  "footer": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "button",
+        "action": {
+          "type": "message",
+          "label": "肉系",
+          "text": "肉"
+        }
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "message",
+          "label": "魚系",
+          "text": "魚"
+        }
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "message",
+          "label": "郷土料理系",
+          "text": "郷土料理"
+        }
+      }
+    ]
+  }
+}
+
+    #f = ('./carousel_box/type.json')
+    #fo = open(f,'r',encoding="utf-8")
+    #fl = json.load(fo)
+    container_obj = FlexSendMessage.new_from_json_dict(payload)
     line_bot_api.push_message(UserID, messages=container_obj)
 #    line_bot_api.reply_message(event.reply_token,
  #           [
