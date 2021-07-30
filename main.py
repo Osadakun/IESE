@@ -2,8 +2,6 @@
 import psycopg2
 from flask import Flask, render_template, g, request, abort
 import os
-import function
-import json
 from linebot.models import *
 
 from linebot import (
@@ -16,8 +14,6 @@ from linebot.exceptions import (
 app = Flask(__name__)
 line_bot_api = LineBotApi(os.environ["ACCESS_TOKEN"])
 handler = WebhookHandler(os.environ["CHANNEL_SECRET"])
-
-UserID = 'U2beb3645d43471171df9ef7886968c39'
 
 @app.route("/")
 def hello_world():
@@ -39,14 +35,17 @@ def callback():
 
 @handler.add(FollowEvent)
 def follow(event):
-    function.greet_message(event)
-
+    line_bot_api.reply_message(event.reply_token,
+        [
+            TextSendMessage(text='観光名所提案Botです。\n友達追加ありがとうございます!!'),
+            TextSendMessage(text='探しているものを以下から選んで送信してください。\n「飲食店」\n「オシャレな建物」\ni「歴史のある建物」')
+        ]
 @handler.add(MessageEvent, message=TextMessage)
 def response_message(event):
     message = event.message.text
     #message = function.greet_message(event)
-    if (message == "フード"):
-        message = function.eat_type(event)
+    if (message == "飲食店"):
+        #message = function.eat_type(event)
         print("message")
 #    elif(Text == "インスタ"):
 #        f = ("./carousel_box/carousel_tourism.json")
