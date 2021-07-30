@@ -51,6 +51,7 @@ def response_message(event):
                 TextSendMessage(text='探しているジャンルを選んでください。\n「肉系」\n「魚系」\n「郷土料理系」')
             ]
         )
+        message = event.message.text
         if(message == "肉系"):
             print("成功だ")
         else:
