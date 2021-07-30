@@ -53,8 +53,9 @@ def response_message(event):
         )
         
     elif(message == "オシャレな建物"):
-
-    elif(Text == "歴史のある建物"):
+        print("hoge")
+    elif(message == "歴史のある建物"):
+        print("fuga")
 
 if __name__ == "__main__":
     port = int(os.getenv("PORT", 5000))
