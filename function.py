@@ -21,7 +21,7 @@ def greet_message(event):
     fo = open(f,'r',encoding="utf-8")
     fl = json.load(fo)
     print("^^-----------------------------------^^")
-    container_obj = FlexSendMessage.new_from_json_dict(payload)
+    #container_obj = FlexSendMessage.new_from_json_dict(payload)
     print("^^-----------------------------------^^")
     line_bot_api.reply_message(event.reply_token,
             [
