@@ -39,15 +39,7 @@ def callback():
 
 @handler.add(FollowEvent)
 def follow(event):
-    f = ("./carousel_box/greet.json")
-    fo = open(f,"r",encoding="utf-8")
-    fl = json.load(fo)
-    line_bot_api.reply_message(event.reply_token,
-        [
-            FlexSendMessage(alt_text='状態を選んでね',contents = fl)
-        ]
-    )
-    fo.close()
+    function.greet_message(event)
 
 @handler.add(MessageEvent, message=TextMessage)
 def response_message(event):
