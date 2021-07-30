@@ -99,7 +99,7 @@ def eat_type(event):
     #f = ('./carousel_box/type.json')
     #fo = open(f,'r',encoding="utf-8")
     #fl = json.load(fo)
-    container_obj = FlexSendMessage.new_from_json_dict(fl.payload)
+    container_obj = FlexSendMessage.new_from_json_dict(payload)
     line_bot_api.push_message(UserID, messages=container_obj)
 #    line_bot_api.reply_message(event.reply_token,
  #           [
