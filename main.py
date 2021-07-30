@@ -37,7 +37,7 @@ def callback():
 
     return 'OK'
 
-@handler.add(FolloewEvent)
+@handler.add(FollowEvent)
 def follow(event):
     f = ("./carousel_box/greet.json")
     fo = open(f,"r",encoding="utf-8")
