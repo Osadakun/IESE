@@ -77,22 +77,9 @@ def greet_message(event):
     }
     }
 
-#    f = ('./carousel_box/greet.json')
-#    fo = open(f,'r',encoding="utf-8")
-#    fl = json.load(fo)
-#    print("^^-----------------------------------^^")
-#    print(fl)
-#    print("^^-----------------------------------^^")
-#    line_bot_api.reply_message(event.reply_token,
- #           [
- #               FlexSendMessage(alt_text='test',contents = fl)
-  #          ]
-   # )
+    container_obj = FlexSendMessage.new_from_json_dict(payload)
+    line_bot_api.push_message(main.UserID, messages=container_obj)
     Text = event.message.text
-    #fo.close()
-    #print("^^^-----------------------------------^^^")
-    #print(fl)
-    #print("^^^-----------------------------------^^^")
     return Text
 
 def eat_type(event):
@@ -155,20 +142,8 @@ def eat_type(event):
     }
     }
 
-    #f = ('./carousel_box/type.json')
-    #fo = open(f,'r',encoding="utf-8")
-    #fl = json.load(fo)
     container_obj = FlexSendMessage.new_from_json_dict(payload)
     line_bot_api.push_message(main.UserID, messages=container_obj)
-#    line_bot_api.reply_message(event.reply_token,
- #           [
-     #           FlexSendMessage(alt_text='test',contents = fl)
-      #      ]
-    #)
-    print("^^-----------------------------------^^")
-    #print(FlexSendMessage(alt_text='test',contents = fl))
-    print("^^-----------------------------------^^")
     Text = event.message.text
-    fo.close()
     return Text
 
