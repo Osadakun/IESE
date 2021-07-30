@@ -20,6 +20,9 @@ def greet_message(event):
     f = ('./carousel_box/greet.json')
     fo = open(f,'r',encoding="utf-8")
     fl = json.load(fo)
+    print("^-----------------------------------^")
+    print(fl)
+    print("^-----------------------------------^")
     line_bot_api.reply_message(event.reply_token,
             [
                 FlexSendMessage(alt_text='test',contents = fl)
