@@ -37,12 +37,14 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def response_message(event):
     Text = event.message.text
+    UserID = event.source.user_id
     message = function.greet_message(event)
     print("-----------------------------------")
     print(message)
     print("-----------------------------------")
     if (message == "フード"):
         message = function.eat_type(event)
+        line_bot_api.push_message(UserID, messages = message)
     elif(Text == "インスタ"):
         f = ("./carousel_box/carousel_tourism.json")
         fo = open(f,"r",encoding="utf-8")
