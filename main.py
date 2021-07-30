@@ -44,7 +44,6 @@ def response_message(event):
     print("-----------------------------------")
     if (message == "フード"):
         message = function.eat_type(event)
-        line_bot_api.push_message(UserID, messages = message)
     elif(Text == "インスタ"):
         f = ("./carousel_box/carousel_tourism.json")
         fo = open(f,"r",encoding="utf-8")

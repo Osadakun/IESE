@@ -39,17 +39,15 @@ def eat_type(event):
     f = ('./carousel_box/type.json')
     fo = open(f,'r',encoding="utf-8")
     fl = json.load(fo)
-    print("^-----------------------------------^")
-    print(fl)
-    print("^-----------------------------------^")
-    line_bot_api.reply_message(event.reply_token,
-            [
-                FlexSendMessage(alt_text='test',contents = fl)
-            ]
-    )
-    print("^^-----------------------------------^^")
-    print(FlexSendMessage(alt_text='test',contents = fl))
-    print("^^-----------------------------------^^")
+    line_bot_api.push_message(UserID, messages = fl)
+#    line_bot_api.reply_message(event.reply_token,
+#            [
+#                FlexSendMessage(alt_text='test',contents = fl)
+#            ]
+#    )
+#    print("^^-----------------------------------^^")
+   # print(FlexSendMessage(alt_text='test',contents = fl))
+   # print("^^-----------------------------------^^")
     Text = event.message.text
     fo.close()
     return Text
