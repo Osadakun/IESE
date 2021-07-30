@@ -1,6 +1,7 @@
 #-*- cording: utf-8 -*-
 from flask import Flask, render_template, g, request, abort
 import os
+import main
 import psycopg2
 import json
 from linebot.models import *
@@ -36,7 +37,6 @@ def greet_message(event):
     return Text
 
 def eat_type(event):
-    UserID = event.source.user_id
     payload = {
     "type": "bubble",
     "direction": "ltr",
@@ -100,7 +100,7 @@ def eat_type(event):
     #fo = open(f,'r',encoding="utf-8")
     #fl = json.load(fo)
     container_obj = FlexSendMessage.new_from_json_dict(payload)
-    line_bot_api.push_message(UserID, messages=container_obj)
+    line_bot_api.push_message(main.UserID, messages=container_obj)
 #    line_bot_api.reply_message(event.reply_token,
  #           [
      #           FlexSendMessage(alt_text='test',contents = fl)

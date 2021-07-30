@@ -17,6 +17,8 @@ app = Flask(__name__)
 line_bot_api = LineBotApi(os.environ["ACCESS_TOKEN"])
 handler = WebhookHandler(os.environ["CHANNEL_SECRET"])
 
+UserID = 'U2beb3645d43471171df9ef7886968c39'
+
 @app.route("/")
 def hello_world():
     return "HelloWorld!"
@@ -38,11 +40,19 @@ def callback():
 def response_message(event):
     Text = event.message.text
     message = function.greet_message(event)
-    print("-----------------------------------")
-    print(message)
-    print("-----------------------------------")
     if (message == "フード"):
-        message = function.eat_type(event)
+        f1 = ("./carousel_box/type.json")
+        fo1 = open(f1,"r",encoding="utf-8")
+        fl1 = json.load(fo1)
+        print("--------------------------------------------")
+        print(fl1)
+        print("--------------------------------------------")
+        line_bot_api.reply_message(event.reply_token,
+                [
+                    FlexSendMessage(alt_text='状態を選んでね',contents = fl1)
+                ]
+        )
+        fo1.close()
     elif(Text == "インスタ"):
         f = ("./carousel_box/carousel_tourism.json")
         fo = open(f,"r",encoding="utf-8")
