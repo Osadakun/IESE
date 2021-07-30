@@ -46,7 +46,7 @@ def response_message(event):
     message = event.message.text
     #message = function.greet_message(event)
     if (message == "フード"):
-        #message = function.eat_type(event)
+        message = function.eat_type(event)
         print("message")
 #    elif(Text == "インスタ"):
 #        f = ("./carousel_box/carousel_tourism.json")
