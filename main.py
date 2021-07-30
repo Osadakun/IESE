@@ -40,6 +40,8 @@ def follow(event):
             TextSendMessage(text='観光名所提案Botです。\n友達追加ありがとうございます!!'),
             TextSendMessage(text='探しているものを以下から選んで送信してください。\n「飲食店」\n「オシャレな建物」\ni「歴史のある建物」')
         ]
+    )
+
 @handler.add(MessageEvent, message=TextMessage)
 def response_message(event):
     message = event.message.text
