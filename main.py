@@ -63,6 +63,7 @@ def response_message(event):
         else:
             print(message)
     elif(status == "ジャンル"):
+        print(status)
         message = event.message.text
         if(message == "肉系"):
             print("成功だ")
