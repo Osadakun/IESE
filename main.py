@@ -44,6 +44,7 @@ def follow(event):
 
 @handler.add(MessageEvent, message=TextMessage)
 def response_message(event):
+    global message
     message = event.message.text
     global status
     status = "挨拶"
@@ -62,10 +63,11 @@ def response_message(event):
         else:
             print(message)
     elif(status == "ジャンル"):
-            if(message == "肉系"):
-                print("成功だ")
-            else:
-                print(messagge)
+        message = event.message.text
+        if(message == "肉系"):
+            print("成功だ")
+        else:
+            print(messagge)
     else:
         print(status)
 
