@@ -45,6 +45,7 @@ def follow(event):
 @handler.add(MessageEvent, message=TextMessage)
 def response_message(event):
     message = event.message.text
+    global status
     status = "挨拶"
     if (status == "挨拶"):
         if (message == "飲食店"):
@@ -53,7 +54,6 @@ def response_message(event):
                     TextSendMessage(text='探しているジャンルを選んでください。\n「肉系」\n「魚系」\n「郷土料理系」')
                 ]
             )
-            global status 
             status = "ジャンル"
         elif(message == "オシャレな建物"):
             print("hoge")
