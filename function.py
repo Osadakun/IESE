@@ -111,7 +111,6 @@ def proposal_meat(event):
                         "size": "sm",
                         "color": "#666666",
                         "flex": 5,
-                        "wrap": true,
                         "contents": []
                       }
                     ]
@@ -135,7 +134,6 @@ def proposal_meat(event):
                         "size": "sm",
                         "color": "#666666",
                         "flex": 5,
-                        "wrap": true,
                         "contents": []
                       }
                     ]
@@ -267,7 +265,6 @@ def proposal_meat(event):
                         "size": "sm",
                         "color": "#666666",
                         "flex": 5,
-                        "wrap": true,
                         "contents": []
                       }
                     ]
@@ -291,7 +288,6 @@ def proposal_meat(event):
                         "size": "sm",
                         "color": "#666666",
                         "flex": 5,
-                        "wrap": true,
                         "contents": []
                       }
                     ]
