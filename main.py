@@ -74,8 +74,6 @@ def response_message(event):
                 ]
             )
            fo.close()
-        elif(message == "オシャレな建物"):
-
         else:
             print(messagge)
     else:
