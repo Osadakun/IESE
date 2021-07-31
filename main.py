@@ -15,6 +15,8 @@ app = Flask(__name__)
 line_bot_api = LineBotApi(os.environ["ACCESS_TOKEN"])
 handler = WebhookHandler(os.environ["CHANNEL_SECRET"])
 
+status = "挨拶"
+
 @app.route("/")
 def hello_world():
     return "HelloWorld!"
@@ -45,23 +47,24 @@ def follow(event):
 @handler.add(MessageEvent, message=TextMessage)
 def response_message(event):
     message = event.message.text
-    if (message == "飲食店"):
-        line_bot_api.reply_message(event.reply_token,
-            [
-                TextSendMessage(text='探しているジャンルを選んでください。\n「肉系」\n「魚系」\n「郷土料理系」')
-            ]
-        )
-        text = event.message.text
-        if(text == "肉系"):
-            print("成功だ")
+    if (status == "挨拶")
+        if (message == "飲食店"):
+            line_bot_api.reply_message(event.reply_token,
+                [
+                    TextSendMessage(text='探しているジャンルを選んでください。\n「肉系」\n「魚系」\n「郷土料理系」')
+                ]
+            )
+        status = "ジャンル"
+        elif(message == "オシャレな建物"):
+            print("hoge")
+        elif(message == "歴史のある建物"):
+            print("fuga")
         else:
-            print("failed")
-    elif(message == "オシャレな建物"):
-        print("hoge")
-    elif(message == "歴史のある建物"):
-        print("fuga")
-    else:
-        print(message)
+            print(message)
+    elif(status == "ジャンル")
+            if(text == "肉系"):
+                print("成功だ")
+            else:
 if __name__ == "__main__":
     port = int(os.getenv("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
