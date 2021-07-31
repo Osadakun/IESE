@@ -62,9 +62,11 @@ def response_message(event):
         else:
             print(message)
     elif(status == "ジャンル"):
-            if(text == "肉系"):
+            if(message == "肉系"):
                 print("成功だ")
             else:
+                print(messagge)
+
 if __name__ == "__main__":
     port = int(os.getenv("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
