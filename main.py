@@ -48,7 +48,7 @@ def follow(event):
 
 @handler.add(MessageEvent, message=TextMessage)
 def response_message(event):
-    UserID = event.source.user_id
+    #UserID = event.source.user_id
     message = event.message.text
     global status
     if (status == "挨拶"):
