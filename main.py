@@ -65,15 +65,7 @@ def response_message(event):
             print("ここに来てるからだめだよ")
     elif(status == "ジャンル"):
         if(message == "肉系"):
-           f = ("./carousel_box/carousel_eat.json")
-           fo = open(f, "r")
-           fl = json.load(fo)
-           line_bot_api.reply_message(event.reply_token,
-                [
-                       FlexSendMessage(alt_text='気になるお店はありますか', contents=fl)
-                ]
-            )
-           fo.close()
+            shop = function.proposal_meat(event)
         else:
             print(messagge)
     else:
