@@ -54,7 +54,8 @@ def response_message(event):
                     TextSendMessage(text='探しているジャンルを選んでください。\n「肉系」\n「魚系」\n「郷土料理系」')
                 ]
             )
-            global status = "ジャンル"
+            global status
+            status = "ジャンル"
         elif(message == "オシャレな建物"):
             print("hoge")
         elif(message == "歴史のある建物"):
