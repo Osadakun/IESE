@@ -61,7 +61,8 @@ def response_message(event):
         elif(message == "歴史のある建物"):
             print("fuga")
         else:
-            print(message)
+            print(status)
+            print("-------------------------------------")
     elif(status == "ジャンル"):
         print(status)
         message = event.message.text
