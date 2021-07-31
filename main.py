@@ -61,17 +61,14 @@ def response_message(event):
         elif(message == "歴史のある建物"):
             print("fuga")
         else:
-            print(status)
-            print("-------------------------------------")
+            print("ここに来てるからだめだよ")
     elif(status == "ジャンル"):
-        print(status)
-        message = event.message.text
         if(message == "肉系"):
             print("成功だ")
         else:
             print(messagge)
     else:
-        print(status)
+        print("ここに来てるからだめだよ")
 
 if __name__ == "__main__":
     port = int(os.getenv("PORT", 5000))
