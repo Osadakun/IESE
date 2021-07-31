@@ -47,7 +47,7 @@ def follow(event):
 @handler.add(MessageEvent, message=TextMessage)
 def response_message(event):
     message = event.message.text
-    if (status == "挨拶")
+    if (status == "挨拶"):
         if (message == "飲食店"):
             line_bot_api.reply_message(event.reply_token,
                 [
@@ -61,7 +61,7 @@ def response_message(event):
             print("fuga")
         else:
             print(message)
-    elif(status == "ジャンル")
+    elif(status == "ジャンル"):
             if(text == "肉系"):
                 print("成功だ")
             else:
