@@ -1,6 +1,7 @@
 #-*- cording: utf-8 -*-
 import psycopg2
 from flask import Flask, render_template, g, request, abort
+import json
 import os
 from linebot.models import *
 
@@ -64,7 +65,17 @@ def response_message(event):
             print("ここに来てるからだめだよ")
     elif(status == "ジャンル"):
         if(message == "肉系"):
-            print("成功だ")
+           f = ("./carousel_box/carousel_eat.json")
+           fo = open(f, "r")
+           fl = jso.load(fo)
+           line_bot_api.reply_message(event.reply_token,
+                [
+                       FlexSendMessage(alt_text='気になるお店はありますか', contents=fl)
+                ]
+            )
+           fo.close()
+        elif(message == "オシャレな建物"):
+
         else:
             print(messagge)
     else:
