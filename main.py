@@ -66,6 +66,8 @@ def response_message(event):
                 print("成功だ")
             else:
                 print(messagge)
+    else:
+        print(status)
 
 if __name__ == "__main__":
     port = int(os.getenv("PORT", 5000))
