@@ -20,7 +20,7 @@ handler = WebhookHandler(os.environ["CHANNEL_SECRET"])
 UserID = "U2beb3645d43471171df9ef7886968c39"
 
 def proposal_meat(event):
-    payload = {"""
+    payload = """{
       "type": "carousel",
       "contents": [
         {
