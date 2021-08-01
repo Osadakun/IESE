@@ -67,18 +67,22 @@ def response_message(event):
             print("ここに来てるからだめだよ")
     elif(status == "ジャンル"):
         if(message == "肉系"):
+             messages = proposal_meat()
+             line_bot_api.reply_message(event.reply_token,
+                     messages
+             )
 #            f = ("./carousel_box/proposal_fish_uogashi.json")
-            f = ("./carousel_box/greet.json")
-            fo = open(f, "r",encoding="utf-8")
-            fl = json.load(fo)
+            #f = ("./carousel_box/greet.json")
+            #fo = open(f, "r",encoding="utf-8")
+            #fl = json.load(fo)
 #            text_messages = FlexSendMessage(alt_text="hoge", contents=text_message)
 #            line_bot_api.push_message(function.UserID, messages=text_messages)
-            line_bot_api.push_message(function.UserID,
-                    [
-                        FlexSendMessage(alt_text='状態を選んでね',contents = fl)
-                    ]
-            )
-            fo.close()
+            #line_bot_api.push_message(function.UserID,
+                    #[
+                     #   FlexSendMessage(alt_text='状態を選んでね',contents = fl)
+                    #]
+            #)
+            #fo.close()
   #                      FlexSendMessage(alt_text='最初はぐー', contents=text_message)
    #             )
             #shop = function.proposal_meat(event)
@@ -86,13 +90,6 @@ def response_message(event):
             print(messagge)
     else:
         print("ここに来てるからだめだよ")
-
-
-
-
-
-
-
 
 if __name__ == "__main__":
     port = int(os.getenv("PORT", 5000))
