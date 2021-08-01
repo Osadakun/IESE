@@ -26,10 +26,10 @@ def proposal_meat(event):
             text="どこに表示されるかな？",
             title="タイトルですよ",
             image_size="cover",
-            thumbnail_image_url="https://任意の画像URL.jpg",
+            thumbnail_image_url="https://img.retty.me/img_repo/l/01/24513567.jpg",
             actions=[
                 URIAction(
-                    uri="https://任意のページURL",
+                    uri="https://linecorp.com/",
                     label="URIアクションのLABEL"
                 )
             ]
