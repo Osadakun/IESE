@@ -21,16 +21,16 @@ status = "挨拶"
 
 def proposal_meat():
     message_template = TemplateSendMessage(
-        alt_text="にゃーん",
+        alt_text="うおがし食堂",
         template=ButtonsTemplate(
-            text="どこに表示されるかな？",
-            title="タイトルですよ",
+            text="石川県金沢市西念4-14-8",
+            title="うおがし食堂",
             image_size="cover",
             thumbnail_image_url="https://img.retty.me/img_repo/l/01/24513567.jpg",
             actions=[
                 URIAction(
-                    uri="https://linecorp.com/",
-                    label="URIアクションのLABEL"
+                    uri="https://tabelog.com/ishikawa/A1701/A170101/17010307/",
+                    label="ホームページ"
                 )
             ]
         )
