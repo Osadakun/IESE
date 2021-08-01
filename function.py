@@ -31,8 +31,8 @@ def proposal_meat():
                 URIAction(
                     uri="https://linecorp.com/",
                     label="URIアクションのLABEL"
-                )
-            ]
+                 )
+             ]
         )
     )
     return message_template
