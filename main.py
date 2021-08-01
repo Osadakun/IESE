@@ -67,7 +67,7 @@ def response_message(event):
             print("ここに来てるからだめだよ")
     elif(status == "ジャンル"):
         if(message == "肉系"):
-            with open('./carousel_box/carousel_eat.json') as f:
+            with open('./carousel_box/proposal_fish_uogashi.json') as f:
                 text_message = json.load(f)
                 line_bot_api.reply_message(
                     event.reply_token,
