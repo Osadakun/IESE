@@ -69,7 +69,7 @@ def response_message(event):
         if(message == "肉系"):
             with open('./carousel_box/proposal_fish_uogashi.json') as f:
                 text_message = json.load(f)
-                line_bot_api.push_message(function.UserID, messages=text_message)
+                line_bot_api.push_message(function.UserID, message=text_message)
 #                line_bot_api.reply_message(
  #                   event.reply_token,
   #                      FlexSendMessage(alt_text='最初はぐー', contents=text_message)
