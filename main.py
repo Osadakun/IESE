@@ -66,7 +66,6 @@ def follow(event):
 
 @handler.add(MessageEvent, message=TextMessage)
 def response_message(event):
-    #UserID = event.source.user_id
     message = event.message.text
     global status
     if (status == "挨拶"):
@@ -108,7 +107,7 @@ def response_message(event):
    #             )
             #shop = function.proposal_meat(event)
         else:
-            print(messagge)
+            print(message)
     else:
         print("ここに来てるからだめだよ")
 
