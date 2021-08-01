@@ -72,7 +72,7 @@ def response_message(event):
             fl = json.load(fo)
 #            text_messages = FlexSendMessage(alt_text="hoge", contents=text_message)
 #            line_bot_api.push_message(function.UserID, messages=text_messages)
-            line_bot_api.reply_message(event.reply_token,
+            line_bot_api.push_message(function.UserID,
                     [
                         FlexSendMessage(alt_text='状態を選んでね',contents = fl)
                     ]
