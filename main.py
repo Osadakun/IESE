@@ -19,6 +19,24 @@ handler = WebhookHandler(os.environ["CHANNEL_SECRET"])
 
 status = "挨拶"
 
+def propsal_meat():
+    message_template = TemplateSendMessage(
+        alt_text="にゃーん",
+        template=ButtonsTemplate(
+            text="どこに表示されるかな？",
+            title="タイトルですよ",
+            image_size="cover",
+            thumbnail_image_url="https://img.retty.me/img_repo/l/01/24513567.jpg",
+            actions=[
+                URIAction(
+                    uri="https://linecorp.com/",
+                    label="URIアクションのLABEL"
+                )
+            ]
+        )
+    )
+    return message_template
+
 @app.route("/")
 def hello_world():
     return "HelloWorld!"
@@ -67,7 +85,7 @@ def response_message(event):
             print("ここに来てるからだめだよ")
     elif(status == "ジャンル"):
         if(message == "肉系"):
-             messages = function.proposal_meat()
+             messages = proposal_meat()
              line_bot_api.reply_message(event.reply_token,
                      messages
              )
