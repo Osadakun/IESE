@@ -353,6 +353,7 @@ def proposal_meat(event):
         }
       ]
     }"""
+
     json_dict = json.loads(payload)
 #    container_obj = FlexSendMessage.new_from_json_dict(payload)
     #line_bot_api.push_message(UserID, messages=container_obj)
