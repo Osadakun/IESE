@@ -67,7 +67,8 @@ def response_message(event):
             print("ここに来てるからだめだよ")
     elif(status == "ジャンル"):
         if(message == "肉系"):
-            f = ("./carousel_box/proposal_fish_uogashi.json")
+#            f = ("./carousel_box/proposal_fish_uogashi.json")
+            f = ("./carousel_box/greet.json")
             fo = open(f, "r",encoding="utf-8")
             fl = json.load(fo)
 #            text_messages = FlexSendMessage(alt_text="hoge", contents=text_message)
