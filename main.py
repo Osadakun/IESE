@@ -87,14 +87,11 @@ def response_message(event):
         if(message == "魚系"):
              messages = proposal_meat()
              line_bot_api.reply_message(event.reply_token,
-                     messages
-             )
-            line_bot_api.reply_message(event.reply_token,
-                [
-                    TextSendMessage(text='この店なんてどうですか？')
-                ]
+                     [
+                        messages,
+                        TextSendMessage(text='この店なんてどうですか？')
+                     ]
             )
-
 #            f = ("./carousel_box/proposal_fish_uogashi.json")
             #f = ("./carousel_box/greet.json")
             #fo = open(f, "r",encoding="utf-8")
