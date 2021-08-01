@@ -20,7 +20,7 @@ handler = WebhookHandler(os.environ["CHANNEL_SECRET"])
 UserID = "U2beb3645d43471171df9ef7886968c39"
 
 def proposal_meat(event):
-    payload = {
+    payload = {"""
       "type": "carousel",
       "contents": [
         {
@@ -352,7 +352,7 @@ def proposal_meat(event):
           }
         }
       ]
-    }
+    }"""
     json_dict = json.loads(payload)
 #    container_obj = FlexSendMessage.new_from_json_dict(payload)
     #line_bot_api.push_message(UserID, messages=container_obj)
