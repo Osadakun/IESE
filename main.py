@@ -19,7 +19,7 @@ handler = WebhookHandler(os.environ["CHANNEL_SECRET"])
 
 status = "挨拶"
 
-def propsal_meat():
+def proposal_meat():
     message_template = TemplateSendMessage(
         alt_text="にゃーん",
         template=ButtonsTemplate(
