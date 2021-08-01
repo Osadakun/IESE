@@ -67,9 +67,10 @@ def response_message(event):
             print("ここに来てるからだめだよ")
     elif(status == "ジャンル"):
         if(message == "肉系"):
-            with open('./carousel_box/proposal_fish_uogashi.json') as f:
-                text_message = json.load(f)
-                line_bot_api.push_message(function.UserID, message=text_message)
+            f = open('./carousel_box/proposal_fish_uogashi.json', r"")
+            text_message = json.load(f)
+            text_messages = FlexSendMessage(alt_text="hoge", contents=text_message)
+            line_bot_api.push_message(function.UserID, messages=text_messages)
 #                line_bot_api.reply_message(
  #                   event.reply_token,
   #                      FlexSendMessage(alt_text='最初はぐー', contents=text_message)
