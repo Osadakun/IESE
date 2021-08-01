@@ -67,7 +67,7 @@ def response_message(event):
             print("ここに来てるからだめだよ")
     elif(status == "ジャンル"):
         if(message == "肉系"):
-             messages = proposal_meat()
+             messages = function.proposal_meat()
              line_bot_api.reply_message(event.reply_token,
                      messages
              )

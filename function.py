@@ -19,7 +19,7 @@ handler = WebhookHandler(os.environ["CHANNEL_SECRET"])
 
 UserID = "U2beb3645d43471171df9ef7886968c39"
 
-def proposal_meat(event):
+def proposal_meat():
     message_template = TemplateSendMessage(
         alt_text="にゃーん",
         template=ButtonsTemplate(
