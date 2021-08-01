@@ -3,7 +3,7 @@ import psycopg2
 from flask import Flask, render_template, g, request, abort
 import json
 import os
-import function
+#import function
 from linebot.models import *
 
 from linebot import (
