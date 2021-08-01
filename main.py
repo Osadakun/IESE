@@ -67,7 +67,13 @@ def response_message(event):
             print("ここに来てるからだめだよ")
     elif(status == "ジャンル"):
         if(message == "肉系"):
-            shop = function.proposal_meat(event)
+            with open('./carousel_box/carousel_eat.json') as f:
+                text_message = json.load(f)
+                line_bot_api.reply_message(
+                    event.reply_token,
+                        FlexSendMessage(alt_text='最初はぐー', contents=text_message)
+                )
+            #shop = function.proposal_meat(event)
         else:
             print(messagge)
     else:
